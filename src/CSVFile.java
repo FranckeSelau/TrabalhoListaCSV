@@ -6,13 +6,14 @@ import java.util.Scanner;
 
 public class CSVFile {
 	
-	CSVParser parseObject = new CSVParser();
+	CSVParser paciente = new PacienteParser(); //instancia novo pacienteparser com o método da interface
+	
 	public void openFile(){
 		try {
 			FileReader fr = new FileReader("paciente.csv");
 			Scanner leitor = new Scanner(fr);
 			leitor.useDelimiter("[,\n]");
-			CSVParser.parseObject(leitor);
+			paciente.parseObject(leitor); // metodo da interface
 			leitor.close();
 		} catch (FileNotFoundException fnfe) {
 			System.err.println("ERRO! Arquivo não Encontrado");
@@ -20,7 +21,9 @@ public class CSVFile {
 		readObject();
 	}
 	public void readObject(){
-		for (Paciente p : PacienteParser.getListaPacientes()) {
+		PacienteParser lista = new PacienteParser();
+		
+		for (Paciente p : lista.getListaPacientes()) {
 			System.out.println(p);
 		}
 	}
