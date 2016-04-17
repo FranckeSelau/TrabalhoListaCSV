@@ -28,6 +28,6 @@ public class Paciente {
 	@Override
 	public String toString() {
 		String data = dataNascimento.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")); //converte a data ISO em data BR
-		return "Paciente - RG: " + rg + ", Nome: " + nome + ", Data de Nascimento: " + data;
+		return "RG: " + rg + ", Nome: " + nome + ", Data de Nascimento: " + data;
 	}	
 }

@@ -22,9 +22,10 @@ public class CSVFile {
 	}
 	public void readObject(){
 		PacienteParser lista = new PacienteParser();
-		
+		int a = 0;
 		for (Paciente p : lista.getListaPacientes()) {
-			System.out.println(p);
+			a++;
+			System.out.println("Paciente "+a+" - "+p);
 		}
 	}
 }
