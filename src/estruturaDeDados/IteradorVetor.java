@@ -1,4 +1,4 @@
-package datastructures;
+package estruturaDeDados;
 
 public class IteradorVetor<T> implements Iterador<T> {
 

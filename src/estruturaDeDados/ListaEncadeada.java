@@ -1,4 +1,4 @@
-package datastructures;
+package estruturaDeDados;
 
 /**
  * Classe que implementa um no da lista encadeada. Esta

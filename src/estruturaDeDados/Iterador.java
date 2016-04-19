@@ -1,4 +1,4 @@
-package datastructures;
+package estruturaDeDados;
 
 /**
  * Extensao da interface Iterator do Java, que permite

@@ -1,4 +1,4 @@
-package datastructures;
+package estruturaDeDados;
 
 /**
  * Implementa um iterador para a lista encadeada. Esta
