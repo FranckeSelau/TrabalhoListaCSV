@@ -1,8 +1,6 @@
 package model;
 import java.util.Scanner;
 
-public interface CSVParser {
-	public void parseObject (Scanner leitor);
-		
-	
+public interface CSVParser<T> {
+	T parseObject (Scanner leitor);	
 }
