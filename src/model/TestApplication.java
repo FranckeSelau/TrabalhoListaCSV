@@ -17,11 +17,11 @@ public class TestApplication {
 		
 		String arquivoM = "medicamento.csv";
 		
-		//medicamento.setParser(m);
-		//medicamento.Open(arquivoM);
+		medicamento.setParser(m);
+		medicamento.Open(arquivoM);
 		
-		String hexNumber = "234a11bce75";
-				int decimal = Integer.parseInt(hexNumber, 16);
-				System.out.println("Hex value is " + decimal);
+		/*String hexNumber = "234a11bce75";
+				Long decimal = Long.parseLong(hexNumber, 16);
+				System.out.println("Hex value is " + decimal);*/
 	}
 }

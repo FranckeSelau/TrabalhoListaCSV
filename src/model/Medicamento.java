@@ -1,15 +1,15 @@
 package model;
 
 public class Medicamento implements Comparable<Medicamento> {
-	private int cod;
+	private long cod;
 	private String nome;
 
 	public Medicamento(String cod, String nome) {
-		this.cod = Integer.parseInt(cod, 16);
+		this.cod = Long.parseLong(cod, 16);
 		this.nome = nome;
 	}
 
-	public int getCodigo() {
+	public long getCodigo() {
 		return cod;
 	}
 
