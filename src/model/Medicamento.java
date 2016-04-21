@@ -1,15 +1,17 @@
 package model;
 
+
+
 public class Medicamento implements Comparable<Medicamento> {
-	private long cod;
+	private int cod;
 	private String nome;
 
-	public Medicamento(String cod, String nome) {
-		this.cod = Long.parseLong(cod, 16);
+	public Medicamento (String cod, String nome) {
+		this.cod = Integer.parseInt(cod); // consersão de String para int
 		this.nome = nome;
 	}
 
-	public long getCodigo() {
+	public int getCodigo() {
 		return cod;
 	}
 
@@ -19,9 +21,9 @@ public class Medicamento implements Comparable<Medicamento> {
 	
 	@Override	
 	public String toString() {
-		return String.format("%-20s", " COD: " + getCodigo()) + "\t"
+		return String.format("%-10s", " COD: " + getCodigo()) + "\t"
         + String.format("%-25s", "| NOME: " + getNome() + "\n"      
-        + "------------------------------------------------------");
+        + "----------------------------");
 	}
 	
 	@Override
