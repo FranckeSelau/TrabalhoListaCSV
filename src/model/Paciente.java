@@ -28,8 +28,8 @@ public class Paciente {
 	@Override	
 	public String toString() {
 		String data = dataNascimento.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")); //converte a data ISO em data BR
-		return String.format("%-15s", "RG: | ", getRg()) + "\t"
-        + String.format("%-30s", "NOME: | " + getNome()) + "\t"
-        + String.format("%-20s", "DATA NASC.: | " + data);
+		return String.format("%-15s", "| RG: " + getRg()) + "\t"
+        + String.format("%-30s", "| NOME: " + getNome()) + "\t"
+        + String.format("%-20s", "| DATA NASC.: " + data);
 	}	
 }

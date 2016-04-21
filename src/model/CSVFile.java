@@ -17,8 +17,7 @@ public class CSVFile<T> {
 				
 				T iterador;
 				iterador = readObject();
-				System.out.println("------------------------------------------\n"
-									+iterador.toString());
+				System.out.println(iterador.toString());
 			}
 			Close();
 		} catch (FileNotFoundException fnfe) {
