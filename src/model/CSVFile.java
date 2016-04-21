@@ -30,7 +30,7 @@ public class CSVFile {
 		}
 	}
 	public void readObject(Scanner leitor){
-		
+	
 	}
 	public void Close(Scanner leitor){
 		leitor.close();
