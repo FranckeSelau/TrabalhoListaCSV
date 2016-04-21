@@ -4,13 +4,12 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.Scanner;
 
-
-
 public class CSVFile<T> {
 	private CSVParser<T> objectParser;
 	
-	public void setParser(CSVParser<T> objectParser){
-		this.objectParser = objectParser;
+	public T setParser(Scanner leitor){
+		T elemento = objectParser.parseObject(leitor);
+		return elemento;
 	}
 
 	public void openFile(){
@@ -20,7 +19,7 @@ public class CSVFile<T> {
 			leitor.useDelimiter("[,\n]");
 			while (leitor.hasNext()) {
         		T iterador;
-        		iterador = readObject(leitor);
+        		iterador = setParser(leitor);
         		System.out.println("---------------------------------------");
         		System.out.println(iterador.toString());
         	}
@@ -29,9 +28,8 @@ public class CSVFile<T> {
 			System.err.println("ERRO! Arquivo não Encontrado");
 		}
 	}
-	public T readObject(Scanner leitor){
-		T elemento = objectParser.parseObject(leitor);
-		return elemento;
+	public void readObject(Scanner leitor){
+		
 	}
 	public void Close(Scanner leitor){
 		leitor.close();

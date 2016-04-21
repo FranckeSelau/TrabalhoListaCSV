@@ -2,8 +2,8 @@ package model;
 
 public class TestApplication {
 
-	public static void main(String[] args) {
-		CSVFile leitura = new CSVFile();
+	public static <T> void main(String[] args) {
+		CSVFile<T> leitura = new CSVFile<T>();
 		
 		leitura.openFile();					
 	}
