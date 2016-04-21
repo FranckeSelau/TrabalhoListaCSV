@@ -17,7 +17,7 @@ public class CSVFile<T> {
 				
 				T iterador;
 				iterador = readObject();
-				System.out.println("---------------------------\n"
+				System.out.println("------------------------------------------\n"
 									+iterador.toString());
 			}
 			Close();
