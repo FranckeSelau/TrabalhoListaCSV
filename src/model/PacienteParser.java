@@ -1,13 +1,12 @@
 package model;
-import java.util.Scanner;
 
 public class PacienteParser implements CSVParser<Paciente> {	
 		
-	public Paciente parseObject (Scanner leitor){
-		Paciente p = new Paciente(leitor.next(),leitor.next(),leitor.next());
+	public Paciente parseObject(String Dados) {
+		String array[] = new String[3];
+		array = Dados.split(",");
+		Paciente p = new Paciente(array[0],array[1],array[2]);
 		return p;
 	}
-
-
 }
 
