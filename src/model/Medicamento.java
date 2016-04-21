@@ -1,7 +1,5 @@
 package model;
 
-import java.time.format.DateTimeFormatter;
-
 public class Medicamento implements Comparable<Medicamento> {
 	private int cod;
 	private String nome;
@@ -21,12 +19,9 @@ public class Medicamento implements Comparable<Medicamento> {
 	
 	@Override	
 	public String toString() {
-		String data = dataNascimento.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")); //converte a data ISO em data BR
-		return String.format("%-20s", " RG: " + getRg()) + "\t"
-        + String.format("%-25s", "| NOME: " + getNome()) + "\t"
-        + String.format("%-20s", "| DATA NASC.: " + data + "\n"
-        + "-----------------------------------------"
-        + "-----------------------------------------");
+		return String.format("%-20s", " COD: " + getCodigo()) + "\t"
+        + String.format("%-25s", "| NOME: " + getNome() + "\n"      
+        + "------------------------------------------------------");
 	}
 	
 	@Override
