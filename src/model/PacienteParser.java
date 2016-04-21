@@ -7,5 +7,7 @@ public class PacienteParser implements CSVParser<Paciente> {
 		Paciente p = new Paciente(leitor.next(),leitor.next(),leitor.next());
 		return p;
 	}
+
+
 }
 

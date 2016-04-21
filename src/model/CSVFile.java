@@ -26,7 +26,7 @@ public class CSVFile<T>{
     }
 	
 	public T readObject(){
-            T elemento = objectParser.parseObject(leitor.next());
+            T elemento = objectParser.parseObject(leitor);
             return elemento;
 	}
 	
