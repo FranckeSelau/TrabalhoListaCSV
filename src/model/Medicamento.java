@@ -1,15 +1,15 @@
 package model;
 
 public class Medicamento implements Comparable<Medicamento> {
-	private int cod;
+	private String cod;
 	private String nome;
 
-	public Medicamento(int cod, String nome) {
+	public Medicamento(String cod, String nome) {
 		this.cod = cod;
 		this.nome = nome;
 	}
 
-	public int getCodigo() {
+	public String getCodigo() {
 		return cod;
 	}
 

@@ -15,9 +15,9 @@ public class CSVFile<T> {
 			leitor.useDelimiter("[\n]");
 			while (leitor.hasNext()) {
 				
-				T iterador;
-				iterador = readObject();
-				System.out.println(iterador.toString());
+				T objeto;
+				objeto = readObject();
+				System.out.println(objeto.toString());
 			}
 			Close();
 		} catch (FileNotFoundException fnfe) {

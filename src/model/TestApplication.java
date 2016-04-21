@@ -5,11 +5,19 @@ public class TestApplication {
 	public static void main(String... args) {
 
 		CSVFile<Paciente> paciente = new CSVFile<Paciente>();
+		CSVFile<Medicamento> medicamento = new CSVFile<Medicamento>();
+		
 		PacienteParser p = new PacienteParser();
+		MedicamentoParser m = new MedicamentoParser();
 
 		String arquivo = "paciente.csv";
 
 		paciente.setParser(p);
 		paciente.Open(arquivo);
+		
+		//String arquivoM = "medicamento.csv";
+		
+		//medicamento.setParser(m);
+		//medicamento.Open(arquivoM);
 	}
 }
