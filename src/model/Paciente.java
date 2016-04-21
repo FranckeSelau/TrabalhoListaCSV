@@ -2,7 +2,7 @@ package model;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
-public class Paciente {	
+public class Paciente implements Comparable<Paciente> {	
 	private String rg;
 	private String nome;
 	private LocalDate dataNascimento;
@@ -33,5 +33,10 @@ public class Paciente {
         + String.format("%-20s", "| DATA NASC.: " + data + "\n"
         + "-----------------------------------------"
         + "-----------------------------------------");
-	}	
+	}
+	
+	@Override
+    public int compareTo(Paciente OutroPaciente) {
+        return(this.getRg().compareTo(OutroPaciente.getRg()));
+    }
 }
