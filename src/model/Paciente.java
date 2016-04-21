@@ -10,8 +10,7 @@ public class Paciente {
 	public Paciente(String rg, String nome, String data) {
 		this.rg = rg;
 		this.nome = nome;
-		this.dataNascimento = LocalDate.parse(data.trim()); //trim renove os espaços de toda string
-		
+		this.dataNascimento = LocalDate.parse(data.trim()); //trim renove os espaços de toda string		
 	}
 
 	public String getRg() {
