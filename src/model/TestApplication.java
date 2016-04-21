@@ -10,14 +10,18 @@ public class TestApplication {
 		PacienteParser p = new PacienteParser();
 		MedicamentoParser m = new MedicamentoParser();
 
-		String arquivo = "paciente.csv";
+		//String arquivo = "paciente.csv";
 
-		paciente.setParser(p);
-		paciente.Open(arquivo);
+		//paciente.setParser(p);
+		//paciente.Open(arquivo);
 		
-		//String arquivoM = "medicamento.csv";
+		String arquivoM = "medicamento.csv";
 		
 		//medicamento.setParser(m);
 		//medicamento.Open(arquivoM);
+		
+		String hexNumber = "234a11bce75";
+				int decimal = Integer.parseInt(hexNumber, 16);
+				System.out.println("Hex value is " + decimal);
 	}
 }

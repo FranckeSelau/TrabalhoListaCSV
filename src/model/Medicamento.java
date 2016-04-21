@@ -1,15 +1,15 @@
 package model;
 
 public class Medicamento implements Comparable<Medicamento> {
-	private String cod;
+	private int cod;
 	private String nome;
 
 	public Medicamento(String cod, String nome) {
-		this.cod = cod;
+		this.cod = Integer.parseInt(cod, 16);
 		this.nome = nome;
 	}
 
-	public String getCodigo() {
+	public int getCodigo() {
 		return cod;
 	}
 
