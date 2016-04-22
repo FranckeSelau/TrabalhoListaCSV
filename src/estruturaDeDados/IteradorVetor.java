@@ -62,39 +62,40 @@ public class IteradorVetor<T extends Comparable<T>> implements Iterador<T> {
 		container.insert(current, dado);
 		current++;
 	}
+	
 	/**
 	 * Remove o dado atual apontado pelo iterador.
 	 */
 	@Override
 	public void remove() {
-		container.remove(current-1);
-	}	
+		container.remove(current - 1);
+	}
 
-	   public void selectionSort(){
-	        int IMenor;
-	        int Candidato;
-	        int IndiceC;
-	            
-	        for(IMenor=0;IMenor<(current-1);++IMenor){
-	            IndiceC=IMenor;
-	            T MenorC = container.get(IMenor);
-	               for(Candidato=IMenor+1;Candidato<current;++Candidato){
-	                  if(compareTo(container.get(IMenor),container.get(Candidato))==1){
-	                     IndiceC=Candidato;
-	                     MenorC=container.get(Candidato);
-	                  }
-	                   swap(container.get(IMenor),container.get(IndiceC));
-	               }
-	            }
-	        }
-	        
-	        private void swap(T X, T Y) {
-	            T temp = X;
-	            X=Y;
-	            Y=temp;
-	        }
-	        
-	        private int compareTo(T primeiro, T proximo) {
-	            return(primeiro.compareTo(proximo));
-	        }
+	public void selectionSort() {
+		int IMenor;
+		int Candidato;
+		int IndiceC;
+
+		for (IMenor = 0; IMenor < (current - 1); ++IMenor) {
+			IndiceC = IMenor;
+			T MenorC = container.get(IMenor);
+			for (Candidato = IMenor + 1; Candidato < current; ++Candidato) {
+				if (compareTo(container.get(IMenor), container.get(Candidato)) == 1) {
+					IndiceC = Candidato;
+					MenorC = container.get(Candidato);
+				}
+				swap(container.get(IMenor), container.get(IndiceC));
+			}
+		}
+	}
+
+	private void swap(T X, T Y) {
+		T temp = X;
+		X = Y;
+		Y = temp;
+	}
+
+	private int compareTo(T primeiro, T proximo) {
+		return (primeiro.compareTo(proximo));
+	}
 }
