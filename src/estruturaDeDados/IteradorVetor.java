@@ -3,10 +3,12 @@ package estruturaDeDados;
 public class IteradorVetor<T extends Comparable<T>> implements Iterador<T> {
 
 	private Vetor<T> container;
-	private int current;
+	private int index;
+	private int current;	
 	
 	public IteradorVetor(Vetor<T> vetor) {
 		this.container = vetor;
+		this.index = 0;
 		this.current = 0;
 	}
 	/**
@@ -25,10 +27,10 @@ public class IteradorVetor<T extends Comparable<T>> implements Iterador<T> {
 	 */
 	@Override
 	public T next() {
-		T data = container.get(current);
-		current++;
+		T data = container.get(index);
+		index++;
 		return data;
-	}
+	}	
 	/**
 	 * Retorna verdadeiro se existe um elemento ante do
 	 * elemento atual. Caso retorne verdadeiro, a chamada
@@ -72,30 +74,38 @@ public class IteradorVetor<T extends Comparable<T>> implements Iterador<T> {
 	}
 
 	public void selectionSort() {
-		int IMenor;
-		int Candidato;
-		int IndiceC;
+		int indiceM;
+		int escolha;
+		int indiceC;
 
-		for (IMenor = 0; IMenor < (current - 1); ++IMenor) {
-			IndiceC = IMenor;
-			T MenorC = container.get(IMenor);
-			for (Candidato = IMenor + 1; Candidato < current; ++Candidato) {
-				if (compareTo(container.get(IMenor), container.get(Candidato)) == 1) {
-					IndiceC = Candidato;
-					MenorC = container.get(Candidato);
+		for (indiceM = 0; indiceM < (current - 1); ++indiceM) {
+			indiceC = indiceM;
+			T menorC = container.get(indiceM);
+			for (escolha = indiceM + 1; escolha < current; ++escolha) {
+				if (compareTo(container.get(indiceM), container.get(escolha)) == 1) {
+					indiceC = escolha;
+					menorC = container.get(escolha);
 				}
-				swap(container.get(IMenor), container.get(IndiceC));
+				swap(container.get(indiceM), container.get(indiceC));
 			}
 		}
-	}
-
-	private void swap(T X, T Y) {
-		T temp = X;
-		X = Y;
-		Y = temp;
 	}
 
 	private int compareTo(T primeiro, T proximo) {
 		return (primeiro.compareTo(proximo));
 	}
+	
+	private void swap(T a, T b) {
+		T temp = a;
+		a = b;
+		b = temp;
+	}
+	
+	public void ExibeVetor(){
+		selectionSort();
+        for(int i=0; i<container.getSize(); i++){
+            System.out.println(container.get(i).toString());
+        
+        }
+    }
 }

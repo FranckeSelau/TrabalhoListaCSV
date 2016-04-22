@@ -36,5 +36,4 @@ public interface Iterador<T>
 	 */
 	void remove();
 	
-	public void selectionSort();
 }

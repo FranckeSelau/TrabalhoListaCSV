@@ -77,19 +77,17 @@ class Node<T> {
 		novo.setNext(this);
 		this.setPrevious(novo);
 		previous.setNext(novo);
-	}
-	
+	}	
 }
 
 /**
- * Implementa uma lista duplamente encadeada, que pode ser
- * iterada em um "for-each".
+ * Implementa uma lista duplamente encadeada, que pode ser iterada em um
+ * "for-each".
  *
- * @param <T> O tipo de dado armazenado na lista.
+ * @param <T>
+ *            O tipo de dado armazenado na lista.
  */
-public class ListaEncadeada<T>
-	implements java.lang.Iterable<T>
-{
+public class ListaEncadeada<T extends Comparable<T>> implements java.lang.Iterable<T> {
 
 	private Node<T> head;
 	private Node<T> tail;
@@ -103,9 +101,10 @@ public class ListaEncadeada<T>
 	}
 
 	/**
-	 * Retorna o primeiro elemento da lista. O metodo deve ter
-	 * visibilidade de pacote, para limitar o acesso e diminuir
-	 * as dependencias externas e aumentar o encapsulamento.
+	 * Retorna o primeiro elemento da lista. O metodo deve ter visibilidade de
+	 * pacote, para limitar o acesso e diminuir as dependencias externas e
+	 * aumentar o encapsulamento.
+	 * 
 	 * @return
 	 */
 	Node<T> getHead() {
@@ -163,5 +162,4 @@ public class ListaEncadeada<T>
 			previous.setNext(next);
 		}
 	}
-
 }

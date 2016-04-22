@@ -3,6 +3,7 @@ package model;
 import DAO.PacienteDAO;
 import DAO.PacienteDAOVetor;
 
+
 public class TestApplication {
 
 	public static void main(String... args) {
@@ -33,21 +34,22 @@ public class TestApplication {
 	    Paciente p4 = new Paciente("005","Nicole","2016-02-20");
 	    Paciente p5 = new Paciente("004","Joao","2016-02-20");
 	    Paciente p6 = new Paciente("003","Mariana","2016-02-20");
-	    PacienteDAO ListaPaciente = new PacienteDAOVetor();
-	    ListaPaciente.addPaciente(p1);
-	    ListaPaciente.addPaciente(p2);
-	    ListaPaciente.addPaciente(p3);
-	    ListaPaciente.addPaciente(p4);
-	    ListaPaciente.addPaciente(p5);
-	    ListaPaciente.addPaciente(p6);
-	    MostrarLista(ListaPaciente);
-	    }
+	    PacienteDAOVetor VetorPaciente = new PacienteDAOVetor();
+	    VetorPaciente.addPaciente(p1);
+	    VetorPaciente.addPaciente(p2);
+	    VetorPaciente.addPaciente(p3);
+	    VetorPaciente.addPaciente(p4);
+	    VetorPaciente.addPaciente(p5);
+	    VetorPaciente.addPaciente(p6);
+	        System.out.println("XXXXXXXXXX ACHOU PELO RG XXXXXXXXXXXXX");
+	    Paciente t = VetorPaciente.getPaciente("001");
+	        System.out.println("Achado: "+t.toString());
+	        System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
+	        System.out.println("************ Vetor de Pacientes Ordenado pelo RG ************");
 	    
-	    public static void MostrarLista(PacienteDAO lista){
-	       for (int i = 0; i < 6; i++) {
-			System.out.println(lista.toString()); 
-			
-		}
+	        System.out.println("************************************");
+
+	    }
 	    }
 	
-}
+

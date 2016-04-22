@@ -1,20 +1,19 @@
 package estruturaDeDados;
 
 /**
- * Implementa um iterador para a lista encadeada. Esta
- * classe esta no mesmo pacote da classe lista para poder
- * utilizar alguns metodos especiais que permitem a inclusao
- * e exclusao de itens, com menos impacto no encapsulamento
+ * Implementa um iterador para a lista encadeada. Esta classe esta no mesmo
+ * pacote da classe lista para poder utilizar alguns metodos especiais que
+ * permitem a inclusao e exclusao de itens, com menos impacto no encapsulamento
  * da Lista Encadeada.
  * 
- * @param <T> O tipo de dado armazenado na lista.
+ * @param <T>
+ *            O tipo de dado armazenado na lista.
  */
-public class IteradorListaEncadeada<T> implements Iterador<T>
-{
+public class IteradorListaEncadeada<T extends Comparable<T>> implements Iterador<T> {
+	
 	private Node<T> iter;
 	private Node<T> previous;
 	private ListaEncadeada<T> list;
-	
 
 	public IteradorListaEncadeada(ListaEncadeada<T> listaEncadeada) {
 		this.list = listaEncadeada;
@@ -23,9 +22,9 @@ public class IteradorListaEncadeada<T> implements Iterador<T>
 	}
 
 	/**
-	 * Retorna verdadeiro se existem mais elementos na lista. 
-	 * @return True se existem mais elementos, false caso
-	 * contrario.
+	 * Retorna verdadeiro se existem mais elementos na lista.
+	 * 
+	 * @return True se existem mais elementos, false caso contrario.
 	 */
 	@Override
 	public boolean hasNext() {
@@ -33,8 +32,8 @@ public class IteradorListaEncadeada<T> implements Iterador<T>
 	}
 
 	/**
-	 * Retorna o proximo elemento da lista, se existir, null
-	 * caso contrario.
+	 * Retorna o proximo elemento da lista, se existir, null caso contrario.
+	 * 
 	 * @return
 	 */
 	@Override
@@ -49,11 +48,10 @@ public class IteradorListaEncadeada<T> implements Iterador<T>
 	}
 
 	/**
-	 * Retorna verdadeiro se existe um elemento ante do
-	 * elemento atual. Caso retorne verdadeiro, a chamada
-	 * ao metodo "previous()" ira funcionar.
-	 * @return True se existe um elemento antes do atual,
-	 * false caso contrario.
+	 * Retorna verdadeiro se existe um elemento ante do elemento atual. Caso
+	 * retorne verdadeiro, a chamada ao metodo "previous()" ira funcionar.
+	 * 
+	 * @return True se existe um elemento antes do atual, false caso contrario.
 	 */
 	@Override
 	public boolean hasPrevious() {
@@ -61,8 +59,8 @@ public class IteradorListaEncadeada<T> implements Iterador<T>
 	}
 
 	/**
-	 * Volta uma posicao na estrutura e retorna o elemento
-	 * anterior.
+	 * Volta uma posicao na estrutura e retorna o elemento anterior.
+	 * 
 	 * @return O elemento anterior na estrutura de dados.
 	 */
 	@Override
@@ -77,17 +75,17 @@ public class IteradorListaEncadeada<T> implements Iterador<T>
 	}
 
 	/**
-	 * Insere um elemento imediatamente antes do elemento
-	 * atual, caso esteja no final da lista, insere no fim
-	 * da lista.
-	 * @param dado O dado a ser inserido na estrutura.
+	 * Insere um elemento imediatamente antes do elemento atual, caso esteja no
+	 * final da lista, insere no fim da lista.
+	 * 
+	 * @param dado
+	 *            O dado a ser inserido na estrutura.
 	 */
 	@Override
 	public void insert(T dado) {
 		if (!hasNext()) {
 			list.append(dado);
-		} else
-		if (!hasPrevious()){
+		} else if (!hasPrevious()) {
 			list.prepend(dado);
 		} else {
 			iter.insertBefore(dado);
@@ -105,10 +103,16 @@ public class IteradorListaEncadeada<T> implements Iterador<T>
 			list.remove(previous);
 	}
 
-	@Override
-	public void selectionSort() {
-		// TODO Auto-generated method stub
-		
+	public void insertionSort(T dado) {
+		Node<T> atual = new Node<T>(dado);
+		while (hasNext()) {
+			if (iter.getPrevious().getData().compareTo(atual.getData()) == 1) {
+				iter.getPrevious().setNext(iter.getPrevious());
+			} else {
+				break;
+			}
+			iter.getPrevious().setNext(atual);
+		}
 	}
-	
 }
+
