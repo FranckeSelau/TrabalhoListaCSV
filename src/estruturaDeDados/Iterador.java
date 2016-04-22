@@ -35,4 +35,6 @@ public interface Iterador<T>
 	 * Remove o dado atual apontado pelo iterador.
 	 */
 	void remove();
+	
+	public void selectionSort();
 }

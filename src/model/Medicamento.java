@@ -1,7 +1,5 @@
 package model;
 
-
-
 public class Medicamento implements Comparable<Medicamento> {
 	private int cod;
 	private String nome;
@@ -23,7 +21,7 @@ public class Medicamento implements Comparable<Medicamento> {
 	public String toString() {
 		return String.format("%-10s", " COD: " + getCodigo()) + "\t"
         + String.format("%-25s", "| NOME: " + getNome() + "\n"      
-        + "----------------------------");
+        + "-----------------------------------");
 	}
 	
 	@Override

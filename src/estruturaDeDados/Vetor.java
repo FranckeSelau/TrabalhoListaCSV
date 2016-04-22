@@ -1,13 +1,13 @@
 package estruturaDeDados;
 
-import java.util.Iterator;
+
 
 /**
  * Implementa uma estrutura de dados de Vetor Dinamico,
  * que permite a insercao e remocao de elementos e o
  * ajuste automatico do tamanho do vetor.
  */
-public class Vetor<T> implements Iterable<T> {
+public class Vetor<T extends Comparable<T>> implements Iterable<T>{
 	
 	/* Armazena os elementos como se fossem Objetos.
 	 * Devido a limitacoes do Java, o vetor nao pode
