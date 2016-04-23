@@ -101,7 +101,7 @@ public class IteradorVetor<T extends Comparable<T>> implements Iterador<T> {
 		b = temp;
 	}
 	
-	public void ExibeVetor(){
+	public void exibeVetor(){
 		selectionSort();
         for(int i=0; i<container.getSize(); i++){
             System.out.println(container.get(i).toString());

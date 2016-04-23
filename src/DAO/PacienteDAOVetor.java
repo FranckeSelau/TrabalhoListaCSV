@@ -7,8 +7,16 @@ import model.Paciente;
 
 public class PacienteDAOVetor implements PacienteDAO<PacienteDAOVetor> {
 
-	private Vetor<Paciente> VetorPacientes = new Vetor<Paciente>();
-	private IteradorVetor<Paciente> Iterador = new IteradorVetor<Paciente>(VetorPacientes);
+	  private Vetor<Paciente> VetorPacientes;
+      private IteradorVetor<Paciente> Iterador;
+      
+      public void PacienteDaoVector(){
+          VetorPacientes = new Vetor<Paciente>();
+          Iterador = new IteradorVetor<Paciente>(VetorPacientes);
+      }
+      public void getVetor(){
+          Iterador.exibeVetor();
+      }
 
 	public Paciente getPaciente(String rg) {
 		Iterador.selectionSort();
