@@ -13,21 +13,21 @@ public class TestApplication {
 	public static void main(String[] args) {
 
 		CSVFile<Paciente> paciente = new CSVFile<Paciente>();
-		CSVFile<Medicamento> medicamento = new CSVFile<Medicamento>();
+		//CSVFile<Medicamento> medicamento = new CSVFile<Medicamento>();
 		 
 		PacienteParser p = new PacienteParser();
-		MedicamentoParser m = new MedicamentoParser();
+		//MedicamentoParser m = new MedicamentoParser();
 
-		String arquivo = "paciente.csv";
+		//String arquivo = "paciente.csv";
 
 		paciente.setParser(p);
-		paciente.Open(arquivo);
+		//paciente.Open(arquivo);
 
-		String arquivoM = "medicamento.csv";
+	//	String arquivoM = "medicamento.csv";
 
-		medicamento.setParser(m);
-		medicamento.Open(arquivoM);
-
+		//medicamento.setParser(m);
+		//medicamento.Open(arquivoM);
+/*
 		Paciente p1 = new Paciente("1005", "Joao", "2016-06-23");
 		Paciente p2 = new Paciente("2003", "Maria", "2016-06-23");
 		Paciente p3 = new Paciente("3007", "Jose", "2016-06-23");
@@ -53,14 +53,19 @@ public class TestApplication {
 		testeVetorPaciente.addPaciente(p10);
 		testeVetorPaciente.addPaciente(p11);
 		testeVetorPaciente.addPaciente(p12);
-
+		
+		*/
+		PacienteDAOVetor testeVetorPaciente = new PacienteDAOVetor();
+		testeVetorPaciente.loadData(paciente);
+		/*
 		System.out.println("\nBUSCA RG:");
-		Paciente t = testeVetorPaciente.getPaciente("2009");
+		Paciente t = testeVetorPaciente.getPaciente("880876243");
 		System.out.println("RETORNO: " + t.toString() + "\n");
 
 		System.out.println("ORDENAÇÃO POR RG");
 		testeVetorPaciente.getVetor();
 		
+		/*
 		Paciente l1 = new Paciente("1005", "Joao", "2016-06-23");
 		Paciente l2 = new Paciente("2003", "Maria", "2016-06-23");
 		Paciente l3 = new Paciente("3007", "Jose", "2016-06-23");
@@ -70,11 +75,8 @@ public class TestApplication {
 		testeListaPaciente.addPaciente(l2);
 		testeListaPaciente.addPaciente(l3);
 		testeListaPaciente.addPaciente(l4);
+		*/
+				
 		
-		System.out.println("ORDENAÇÃO POR RG");
-		testeListaPaciente.getLista();
-		
-		
-		//testeVetorPaciente.loadData(pacienteVetor);
-	}
+	}	
 }

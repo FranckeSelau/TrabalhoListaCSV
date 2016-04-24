@@ -1,7 +1,5 @@
 package estruturaDeDados;
 
-import java.util.Iterator;
-
 /**
  * Implementa uma estrutura de dados de Vetor Dinamico,
  * que permite a insercao e remocao de elementos e o
@@ -20,7 +18,7 @@ public class Vetor<T extends Comparable<T>> implements Iterable<T> {
 	 * Inicializa o vetor com um minimo de espaco de armazenamento.
 	 */
 	public Vetor() {
-		this.data = new Object[20];
+		this.data = new Object[16];
 		this.itemCount = 0;
 	}
 	

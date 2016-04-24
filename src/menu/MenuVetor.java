@@ -3,6 +3,7 @@ package menu;
 import estruturaDeDados.Console;
 
 public class MenuVetor {
+	
 	public static void menuInicialVetor() {
 		boolean a = true;
 		while (a) {

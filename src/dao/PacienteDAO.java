@@ -10,5 +10,5 @@ public interface PacienteDAO<T> {
 
 	void removePaciente(String rg);
 
-	void loadData(CSVFile arquivo);
+	void loadData(CSVFile<Paciente> arquivo);
 }
