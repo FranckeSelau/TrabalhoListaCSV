@@ -1,6 +1,7 @@
 
 package menu;
 
+import dao.PacienteDAOLista;
 import dao.PacienteDAOVetor;
 import model.CSVFile;
 import model.Medicamento;
@@ -13,7 +14,7 @@ public class TestApplication {
 
 		CSVFile<Paciente> paciente = new CSVFile<Paciente>();
 		CSVFile<Medicamento> medicamento = new CSVFile<Medicamento>();
-
+		 
 		PacienteParser p = new PacienteParser();
 		MedicamentoParser m = new MedicamentoParser();
 
@@ -59,5 +60,21 @@ public class TestApplication {
 
 		System.out.println("ORDENAÇÃO POR RG");
 		testeVetorPaciente.getVetor();
+		
+		Paciente l1 = new Paciente("1005", "Joao", "2016-06-23");
+		Paciente l2 = new Paciente("2003", "Maria", "2016-06-23");
+		Paciente l3 = new Paciente("3007", "Jose", "2016-06-23");
+		Paciente l4 = new Paciente("8001", "Didi", "2016-06-23");
+		PacienteDAOLista testeListaPaciente = new PacienteDAOLista();
+		testeListaPaciente.addPaciente(l1);
+		testeListaPaciente.addPaciente(l2);
+		testeListaPaciente.addPaciente(l3);
+		testeListaPaciente.addPaciente(l4);
+		
+		System.out.println("ORDENAÇÃO POR RG");
+		testeListaPaciente.getLista();
+		
+		
+		//testeVetorPaciente.loadData(pacienteVetor);
 	}
 }

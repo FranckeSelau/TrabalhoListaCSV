@@ -10,6 +10,5 @@ public interface PacienteDAO<T> {
 
 	void removePaciente(String rg);
 
-	@SuppressWarnings("rawtypes")
 	void loadData(CSVFile arquivo);
 }

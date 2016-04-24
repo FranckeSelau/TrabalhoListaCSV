@@ -8,7 +8,7 @@ import model.Paciente;
 
 public class PacienteDAOLista implements PacienteDAO<PacienteDAOLista> {
 	ListaEncadeada<Paciente> ListaPaciente = new ListaEncadeada<Paciente>();
-	IteradorListaEncadeada<Paciente> IteradorPaciente = new IteradorListaEncadeada(ListaPaciente);
+	IteradorListaEncadeada<Paciente> IteradorPaciente = new IteradorListaEncadeada<Paciente>(ListaPaciente);
 
 	public ListaEncadeada<Paciente> getLista() {
 		return ListaPaciente;
