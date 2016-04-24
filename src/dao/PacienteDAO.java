@@ -1,4 +1,5 @@
-package DAO;
+package dao;
+
 import model.CSVFile;
 import model.Paciente;
 
@@ -9,5 +10,6 @@ public interface PacienteDAO<T> {
 
 	void removePaciente(String rg);
 
+	@SuppressWarnings("rawtypes")
 	void loadData(CSVFile arquivo);
 }

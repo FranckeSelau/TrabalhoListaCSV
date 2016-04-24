@@ -8,7 +8,7 @@ package estruturaDeDados;
  * @param <T> O tipo de dado dos elementos que serao
  * armazenados na estrutura de dados.
  */
-public interface Iterador<T>
+public interface Iterador<T> 
 	extends java.util.Iterator<T>
 {
 	/**
@@ -35,5 +35,4 @@ public interface Iterador<T>
 	 * Remove o dado atual apontado pelo iterador.
 	 */
 	void remove();
-	
 }

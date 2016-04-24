@@ -1,4 +1,4 @@
-package DAO;
+package dao;
 
 import model.CSVFile;
 import model.Medicamento;
@@ -10,5 +10,6 @@ public interface MedicamentoDAO<T> {
 
 	void removeMedicamento(int codigo);
 
+	@SuppressWarnings("rawtypes")
 	void loadData(CSVFile arquivo);
 }

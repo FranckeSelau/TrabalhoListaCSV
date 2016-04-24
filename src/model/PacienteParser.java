@@ -9,4 +9,3 @@ public class PacienteParser implements CSVParser<Paciente> {
 		return p;
 	}
 }
-

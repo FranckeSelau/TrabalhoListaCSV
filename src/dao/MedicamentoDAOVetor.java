@@ -1,4 +1,4 @@
-package DAO;
+package dao;
 
 import estruturaDeDados.IteradorVetor;
 import estruturaDeDados.Vetor;
@@ -9,36 +9,36 @@ public class MedicamentoDAOVetor implements MedicamentoDAO<MedicamentoDAOVetor> 
 	private Vetor<Medicamento> VetorMedicamento = new Vetor<Medicamento>();
 	private IteradorVetor<Medicamento> Iterador = new IteradorVetor<Medicamento>(VetorMedicamento);
 
-	public Medicamento getMedicamento(int codigo) {
-		Iterador.selectionSort();
-		Medicamento Encontrado = null;
-		while (Iterador.hasNext()) {
-			if (Iterador.next().getCodigo() == codigo) {
-				Encontrado = Iterador.next();
-			}
-		}
-		return Encontrado;
-	}
-
 	@Override
 	public void addMedicamento(Medicamento medicamento) {
 		Iterador.insert(medicamento);
 	}
 
 	@Override
-	public void removeMedicamento(int codigo) {
+	public void removeMedicamento(int cod) {
 		while (Iterador.hasNext()) {
-			if (Iterador.next().getCodigo() == codigo) {
+			if (Iterador.next().getCodigo() == cod) {
 				Iterador.remove();
 			}
 		}
+	}
+	
+	public Medicamento getMedicamento(int cod) {
+		Iterador.selectionSort();
+		Medicamento correto = null;
+		while (Iterador.hasNext()) {
+			if (Iterador.next().getCodigo() == cod) {
+				correto = Iterador.next();
+			}
+		}
+		return correto;
 	}
 
 	@Override
 	public void loadData(CSVFile arquivo) {
 		CSVFile<Medicamento> arquivoMed = arquivo;
-		String Filename = "medicamento.csv";
-		arquivo.Open(Filename);
+		String filename = "medicamento.csv";
+		arquivo.Open(filename);
 		addMedicamento(arquivoMed.readObject());
 		arquivo.Close();
 	}

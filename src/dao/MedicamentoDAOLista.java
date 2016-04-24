@@ -1,4 +1,5 @@
-package DAO;
+
+package dao;
 
 import estruturaDeDados.IteradorListaEncadeada;
 import estruturaDeDados.ListaEncadeada;
@@ -10,28 +11,28 @@ public class MedicamentoDAOLista implements MedicamentoDAO<MedicamentoDAOLista> 
 	IteradorListaEncadeada<Medicamento> IteradorMedicamento = new IteradorListaEncadeada(ListaMedicamento);
 
 	@Override
-	public Medicamento getMedicamento(int codigo) {
-		Medicamento Encontrado = null;
-		while (IteradorMedicamento.hasNext()) {
-			if (IteradorMedicamento.next().getCodigo() == codigo) {
-				Encontrado = IteradorMedicamento.next();
-			}
-		}
-		return Encontrado;
-	}
-
-	@Override
 	public void addMedicamento(Medicamento medicamento) {
 		IteradorMedicamento.insertionSort(medicamento);
 	}
 
 	@Override
-	public void removeMedicamento(int codigo) {
+	public void removeMedicamento(int cod) {
 		while (IteradorMedicamento.hasNext()) {
-			if (IteradorMedicamento.next().getCodigo() == codigo) {
+			if (IteradorMedicamento.next().getCodigo() == cod) {
 				IteradorMedicamento.remove();
 			}
 		}
+	}
+	
+	@Override
+	public Medicamento getMedicamento(int cod) {
+		Medicamento correto = null;
+		while (IteradorMedicamento.hasNext()) {
+			if (IteradorMedicamento.next().getCodigo() == cod) {
+				correto = IteradorMedicamento.next();
+			}
+		}
+		return correto;
 	}
 
 	@Override

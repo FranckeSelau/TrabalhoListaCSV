@@ -1,19 +1,20 @@
 package estruturaDeDados;
 
 /**
- * Implementa um iterador para a lista encadeada. Esta classe esta no mesmo
- * pacote da classe lista para poder utilizar alguns metodos especiais que
- * permitem a inclusao e exclusao de itens, com menos impacto no encapsulamento
+ * Implementa um iterador para a lista encadeada. Esta
+ * classe esta no mesmo pacote da classe lista para poder
+ * utilizar alguns metodos especiais que permitem a inclusao
+ * e exclusao de itens, com menos impacto no encapsulamento
  * da Lista Encadeada.
  * 
- * @param <T>
- *            O tipo de dado armazenado na lista.
+ * @param <T> O tipo de dado armazenado na lista.
  */
-public class IteradorListaEncadeada<T extends Comparable<T>> implements Iterador<T> {
-	
+public class IteradorListaEncadeada<T extends Comparable<T>> implements Iterador<T>
+{
 	private Node<T> iter;
 	private Node<T> previous;
 	private ListaEncadeada<T> list;
+	
 
 	public IteradorListaEncadeada(ListaEncadeada<T> listaEncadeada) {
 		this.list = listaEncadeada;
@@ -22,9 +23,9 @@ public class IteradorListaEncadeada<T extends Comparable<T>> implements Iterador
 	}
 
 	/**
-	 * Retorna verdadeiro se existem mais elementos na lista.
-	 * 
-	 * @return True se existem mais elementos, false caso contrario.
+	 * Retorna verdadeiro se existem mais elementos na lista. 
+	 * @return True se existem mais elementos, false caso
+	 * contrario.
 	 */
 	@Override
 	public boolean hasNext() {
@@ -115,4 +116,3 @@ public class IteradorListaEncadeada<T extends Comparable<T>> implements Iterador
 		}
 	}
 }
-
