@@ -1,7 +1,12 @@
 
-package model;
+package menu;
 
 import dao.PacienteDAOVetor;
+import model.CSVFile;
+import model.Medicamento;
+import model.MedicamentoParser;
+import model.Paciente;
+import model.PacienteParser;
 
 public class TestApplication {
 	public static void main(String[] args) {
