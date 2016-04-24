@@ -8,7 +8,7 @@ public class CSVFile<T> {
 	private CSVParser<T> objectParser;
 	private Scanner leitor;
 
-	public void Open(String arquivo) {
+	public void open(String arquivo) {
 		try {
 			FileReader fr = new FileReader(arquivo);
 			leitor = new Scanner(fr);
@@ -19,7 +19,7 @@ public class CSVFile<T> {
 				objeto = readObject();
 				System.out.println(objeto.toString());
 			}
-			Close();
+			close();
 		} catch (FileNotFoundException fnfe) {
 			System.err.println(fnfe.getMessage());
 		}
@@ -30,7 +30,7 @@ public class CSVFile<T> {
 		return elemento;
 	}
 
-	public void Close() {
+	public void close() {
 		leitor.close();
 	}
 

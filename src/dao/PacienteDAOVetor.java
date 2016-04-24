@@ -53,9 +53,9 @@ public class PacienteDAOVetor implements PacienteDAO<PacienteDAOVetor> {
 	public void loadData(CSVFile arquivo) {
 		CSVFile<Paciente> arquivoPac = arquivo;
 		String filename = "paciente.csv";
-		arquivo.Open(filename);
+		arquivo.open(filename);
 		addPaciente(arquivoPac.readObject());
-		arquivo.Close();
+		arquivo.close();
 	}
 }
 

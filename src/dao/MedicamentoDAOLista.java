@@ -39,8 +39,8 @@ public class MedicamentoDAOLista implements MedicamentoDAO<MedicamentoDAOLista> 
 	public void loadData(CSVFile arquivo) {
 		CSVFile<Medicamento> arquivoMed = arquivo;
 		String Filename = "medicamento.csv";
-		arquivo.Open(Filename);
+		arquivo.open(Filename);
 		addMedicamento(arquivoMed.readObject());
-		arquivo.Close();
+		arquivo.close();
 	}
 }

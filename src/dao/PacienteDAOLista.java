@@ -43,8 +43,8 @@ public class PacienteDAOLista implements PacienteDAO<PacienteDAOLista> {
 	public void loadData(CSVFile arquivo) {
 		CSVFile<Paciente> arquivoPac = arquivo;
 		String filename = "paciente.csv";
-		arquivo.Open(filename);
+		arquivo.open(filename);
 		addPaciente(arquivoPac.readObject());
-		arquivo.Close();
+		arquivo.close();
 	}
 }

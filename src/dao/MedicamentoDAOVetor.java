@@ -38,8 +38,8 @@ public class MedicamentoDAOVetor implements MedicamentoDAO<MedicamentoDAOVetor> 
 	public void loadData(CSVFile arquivo) {
 		CSVFile<Medicamento> arquivoMed = arquivo;
 		String filename = "medicamento.csv";
-		arquivo.Open(filename);
+		arquivo.open(filename);
 		addMedicamento(arquivoMed.readObject());
-		arquivo.Close();
+		arquivo.close();
 	}
 }
