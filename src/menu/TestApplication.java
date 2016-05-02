@@ -19,6 +19,7 @@ public class TestApplication {
 		//testeVetorPacienteCSV();
 		
 		//testeMedicamentoCSV();
+		
 	}
 
 	public static void testeManualVetor() {

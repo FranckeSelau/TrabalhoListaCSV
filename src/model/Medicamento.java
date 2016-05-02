@@ -4,8 +4,8 @@ public class Medicamento implements Comparable<Medicamento> {
 	private int cod;
 	private String nome;
 
-	public Medicamento (String cod, String nome) {
-		this.cod = Integer.parseInt(cod); // consersão de String para int
+	public Medicamento (String parseCod, String nome) {
+		this.cod = (int)(long)(Long.parseLong(parseCod, 16)/1000000); // conversão de String para long e após para int.
 		this.nome = nome;
 	}
 
